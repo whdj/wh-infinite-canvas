@@ -1,7 +1,7 @@
 # Tencent Cloud Lighthouse deployment
 
 Target: Ubuntu 24.04 on the existing Lighthouse instance, with Caddy serving
-`https://canvas.metal-anchor.site`. The application uses port `30011` on
+`https://canvas.metal-anchor.site`. The application listens on
 `127.0.0.1:30011`. The current live instance is intentionally public, so anyone
 with the URL can use the canvas and any configured upstream API quota. The API
 includes filesystem and external-service operations; add authentication before
