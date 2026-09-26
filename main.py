@@ -19053,5 +19053,6 @@ if __name__ == "__main__":
     # 默认 20s ping/20s 超时会把这些连接每隔一会儿就踢掉造成"频繁断连"。
     # 客户端有自己的应用层心跳 + 断线重连兜底，这里禁用协议 ping 更稳。
     port = int(os.getenv("WH_CANVAS_PORT", "3001"))
-    uvicorn.run(app, host="0.0.0.0", port=port,
+    host = os.getenv("WH_CANVAS_HOST", "127.0.0.1")
+    uvicorn.run(app, host=host, port=port,
                 ws_ping_interval=None, ws_ping_timeout=None)

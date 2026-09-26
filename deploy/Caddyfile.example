@@ -1,0 +1,10 @@
+# Add this site block to the existing /etc/caddy/Caddyfile.
+# Generate a hash on the server with: caddy hash-password
+# Replace the placeholder before validating or reloading Caddy.
+canvas.metal-anchor.site {
+    encode gzip
+    basic_auth {
+        whdj REPLACE_WITH_CADDY_PASSWORD_HASH
+    }
+    reverse_proxy 127.0.0.1:30010
+}

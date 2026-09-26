@@ -1,0 +1,24 @@
+[Unit]
+Description=WH Infinite Canvas
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=whcanvas
+Group=whcanvas
+WorkingDirectory=/opt/wh-infinite-canvas
+Environment=PYTHONUNBUFFERED=1
+Environment=WH_CANVAS_HOST=127.0.0.1
+Environment=WH_CANVAS_PORT=30010
+EnvironmentFile=-/etc/wh-infinite-canvas.env
+UMask=0077
+ExecStart=/opt/wh-infinite-canvas/.venv/bin/python /opt/wh-infinite-canvas/main.py
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
