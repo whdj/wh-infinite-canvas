@@ -1,10 +1,7 @@
 # Add this site block to the existing /etc/caddy/Caddyfile.
-# Generate a hash on the server with: caddy hash-password
-# Replace the placeholder before validating or reloading Caddy.
+# This intentionally allows public access. Add basicauth or another access
+# control before using it for a private or quota-sensitive deployment.
 canvas.metal-anchor.site {
     encode gzip
-    basicauth {
-        whdj REPLACE_WITH_CADDY_PASSWORD_HASH
-    }
-    reverse_proxy 127.0.0.1:30010
+    reverse_proxy 127.0.0.1:30011
 }

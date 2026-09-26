@@ -33,4 +33,4 @@ $env:WH_CANVAS_PORT = "3002"
 
 ## 服务器部署
 
-腾讯云轻量应用服务器的部署配置和步骤见 [deploy/README.md](deploy/README.md)。公网部署必须配置访问认证，且服务仅监听回环地址。
+腾讯云轻量应用服务器的部署配置和步骤见 [deploy/README.md](deploy/README.md)。当前线上实例公开访问，服务仍仅监听服务器回环地址；如配置付费 API 或私有素材，建议在 Caddy 增加认证。
