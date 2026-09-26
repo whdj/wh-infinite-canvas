@@ -10,7 +10,7 @@ Group=whcanvas
 WorkingDirectory=/opt/wh-infinite-canvas
 Environment=PYTHONUNBUFFERED=1
 Environment=WH_CANVAS_HOST=127.0.0.1
-Environment=WH_CANVAS_PORT=30010
+Environment=WH_CANVAS_PORT=30011
 EnvironmentFile=-/etc/wh-infinite-canvas.env
 UMask=0077
 ExecStart=/opt/wh-infinite-canvas/.venv/bin/python /opt/wh-infinite-canvas/main.py

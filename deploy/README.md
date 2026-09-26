@@ -1,8 +1,8 @@
 # Tencent Cloud Lighthouse deployment
 
 Target: Ubuntu 24.04 on the existing Lighthouse instance, with Caddy serving
-`https://canvas.metal-anchor.site`. The application uses port `30010` on
-`127.0.0.1`. This is a single-user service: protect the entire host with Caddy
+`https://canvas.metal-anchor.site`. The application uses port `30011` on
+`127.0.0.1:30011`. This is a single-user service: protect the entire host with Caddy
 HTTP Basic authentication before making it public. The API includes filesystem
 and external-service operations and is not safe to expose anonymously.
 
@@ -12,7 +12,8 @@ their corresponding services on the machine they connect to; a remote server
 does not gain access to software installed on a visitor's PC.
 
 1. Confirm `canvas.metal-anchor.site` points to this server, port `30010` is
-   unused, and `/etc/caddy/Caddyfile` has no site block for that host.
+   unused, and `/etc/caddy/Caddyfile` has no site block for that host. Port
+   `30010` is used by an existing service on this server; use `30011` here.
 2. Create a dedicated system account and install the public repository. Keep
    the checkout path aligned with the service file:
 
@@ -35,8 +36,9 @@ does not gain access to software installed on a visitor's PC.
    curl -fsS http://127.0.0.1:30010/api/app-info
    ```
 
-4. Run `caddy hash-password` and set a new unique password. Append the site
-   block from `deploy/Caddyfile.example` to the *existing* server-side
+4. Run `caddy hash-password` and set a new unique password. Caddy 2.6 uses the
+   `basicauth` directive shown in `deploy/Caddyfile.example`. Append the site
+   block to the *existing* server-side
    `/etc/caddy/Caddyfile`, replacing the placeholder there with the hash.
    Never write the hash to a tracked file. Validate and reload Caddy; do not overwrite
    the existing site blocks for other services:

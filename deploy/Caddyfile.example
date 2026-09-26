@@ -3,7 +3,7 @@
 # Replace the placeholder before validating or reloading Caddy.
 canvas.metal-anchor.site {
     encode gzip
-    basic_auth {
+    basicauth {
         whdj REPLACE_WITH_CADDY_PASSWORD_HASH
     }
     reverse_proxy 127.0.0.1:30010
