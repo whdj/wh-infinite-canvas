@@ -1,0 +1,22 @@
+WH Infinite Canvas 本地运行说明
+
+1. Windows 双击 run.bat。默认访问 http://127.0.0.1:3001/。
+   若提示缺少依赖，先双击 安装依赖.bat，再重新运行 run.bat。
+
+2. 页面左侧可进入无限画布、在线生图、GPT 对话、素材库等功能。
+   在「API 设置」中配置你自己的服务地址和 API Key，或连接本地 ComfyUI。
+   ModelScope、RunningHub、即梦 CLI 等集成保留，按需配置对应账号。
+
+3. 更换端口时，在 PowerShell 中执行：
+   $env:WH_CANVAS_PORT = "3002"
+   .\run.bat
+   浏览器和插件应连接同一个端口。
+
+4. 在启动窗口按 Ctrl+C 停止服务。
+   macOS 请按 MAC-使用说明.md 安装依赖和启动。
+
+5. data、assets、output、API 和 global_config.json 存放本地数据或配置。
+   迁移或重装前请备份。Git 已忽略运行数据、密钥配置和本地 Python 环境。
+
+6. 本版本仅保存在本地，没有配置远程仓库或在线更新源。
+   完整操作教程见 新手运行与使用教程.md；来源与许可见 NOTICE.md 和 LICENSE。

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="WH Infinite Canvas">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <path d="M25 33l10 61h12l17-38 17 38h12l10-61H91l-5 37-13-30H55L42 70l-5-37H25z" fill="#fff"/>
+  <path d="M68 33h10v61H68z" fill="#93c5fd" opacity=".95"/>
+</svg>

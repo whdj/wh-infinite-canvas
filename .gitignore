@@ -1,0 +1,28 @@
+# Local runtime and downloaded installation packages
+/python/
+/packages/
+/.venv/
+/venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local credentials, configuration and user content
+.env
+.env.*
+!.env.example
+/API/*auth*.json
+/global_config.json
+/history.json
+/data/
+/assets/
+/output/
+/workflows/自定义/
+*.log
+/_self_restart.*
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
